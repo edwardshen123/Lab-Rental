@@ -1,0 +1,72 @@
+function createLabRentalEvent() {
+  // Renter Information Variables
+  var name = 'BLANK';
+  var email = 'BLANK@MAIL.com';
+  var phone = '000-000-0000';
+  var object = 'OBJECT #';
+  
+  // Gets the Calendar
+  var calen = CalendarApp.getDefaultCalendar();
+  
+  // Prompt User for Variables
+  //var ui = CalendarApp.getUi();
+  // Name Prompt
+  //var namePrompt = ui.prompt('Lab Rental', 'Enter Renter Name', ui.ButtonSet.OK_CANCEL);
+  // Process the user's response.
+  //var button = name.getSelectedButton();
+  //var text = name.getResponseText();
+  //if (button == ui.Button.OK) {
+    // User clicked "OK".
+    //name = text;
+    //ui.alert('Your name is ' + text + '.');
+  //} else if (button == ui.Button.CANCEL) {
+    // User clicked "Cancel".
+    //ui.alert('Default Name set to BLANK');
+  //} else if (button == ui.Button.CLOSE) {
+    // User clicked X in the title bar.
+    //ui.alert('Default Name set to BLANK');
+  //}
+  
+  // Email Prompt
+  //var emailPrompt = ui.prompt('Lab Rental', 'Enter Renter Email', ui.ButtonSet.OK_CANCEL);
+  // Process the user's response.
+  //var button = name.getSelectedButton();
+  //var text = name.getResponseText();
+  //if (button == ui.Button.OK) {
+    // User clicked "OK".
+    //email = text;
+    //ui.alert('Your email is ' + text + '.');
+  //} else if (button == ui.Button.CANCEL) {
+    // User clicked "Cancel".
+    //ui.alert('Default Email set to BLANK@MAIL.com');
+  //} else if (button == ui.Button.CLOSE) {
+    // User clicked X in the title bar.
+    //ui.alert('Default Email set to BLANK@MAIL.com');
+  //}
+  
+//  // Phone Prompt
+//  var phonePrompt = ui.prompt('Lab Rental', 'Enter Renter Phone', ui.ButtonSet.OK_CANCEL);
+//  // Process the user's response.
+//  var button = name.getSelectedButton();
+//  var text = name.getResponseText();
+//  if (button == ui.Button.OK) {
+//    // User clicked "OK".
+//    phone = text;
+//    ui.alert('Your phone is ' + text + '.');
+//  } else if (button == ui.Button.CANCEL) {
+//    // User clicked "Cancel".
+//    ui.alert('Default Phone set to 000-000-0000');
+//  } else if (button == ui.Button.CLOSE) {
+//    // User clicked X in the title bar.
+//    ui.alert('Default Phone set to 000-000-0000');
+//  }
+  
+  // Calendar Event Variables
+  var title = object + ' - ' + name;
+  var startTime = new Date();
+  var endTime = new Date(startTime.getTime() + (2 * 3600 * 1000));
+  var descrip = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nChecked out by Eddie @ ' + startTime.toLocaleTimeString() + '\n';
+  
+  // Create New Event
+  calen.createEvent(title, startTime, endTime, {description: descrip});
+}
